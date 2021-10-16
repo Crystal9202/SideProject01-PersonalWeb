@@ -1,0 +1,53 @@
+{% extends "base.html"%}
+{% from 'bootstrap/form.html' import render_form %}
+ 
+
+{% block title %}  留言板  {% endblock %}
+
+{% block main %}
+
+{% for message in get_flashed_messages() %}
+<div class="alert alert-info flash">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    {{ message }}
+</div>
+{% endfor %}
+
+
+
+<div class="row">
+    <div class="col-md-2 "></div>
+    <div class="col-md-8 text-left center">
+        {{ render_form(form ,button_map = {'submit':'danger'}, extra_classes = 'message')  }}
+    </div>
+    <div class="col-md-2 "></div>
+</div>
+
+<div class="total" >
+    總共有{{ messages | length }}筆留言
+</div>
+
+
+
+
+<div class="list-group">
+    {% for message in messages %}
+        <a class="list-group-item list-group-item-action flex-column mylist">
+            <div class="d-flex w-100 justify-content-between">
+                <span class="mb-1 name">
+                    {{ message.name}}<small class="text-muted">#{{ loop.revindex }}</small>
+                </span>
+                <span class="mb-1 name" data-toggle='tooltip' data-placeent="top"
+                    data-timestamp="{{ message.timestamp.strftime('%Y-%m-%dT%H:%M:%SZ') }}"
+                    data-delay="500"> 
+                    {{ moment(message.timestamp).fromNow(refresh=True) }}
+                </span>  
+            </div>
+        </a>      
+        <p class ="mb-1 text-left word">{{ message.body }}</p>
+    {% endfor %}
+</div>
+
+<center ><div class="divider1"></div></center>
+
+{% endblock %}

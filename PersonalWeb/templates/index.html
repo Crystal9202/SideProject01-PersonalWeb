@@ -1,0 +1,154 @@
+{% extends "base.html"%}
+{% block main %}
+<div class="outer">
+<div class="about">
+<h1 class="cover-heading display-3 cont">
+  轉職的道路沒有捷徑, <br>
+  唯有樂觀進取, 一步一腳印｡
+</h1>
+<p class="lead cont content down">
+    我是Crystal,　有海外工作經驗｡ 積極､ 自主學習,　勇於嘗試跨領域挑戰｡以資料分析師跟後端工程師為目標,
+    您的寶貴經驗與意見會是我最大的動力,<br>
+    歡迎留言給我｡
+</p>
+
+<div class="down"></div>
+
+<p class="lead">
+    <a href="{{ url_for('message')}}" class="btn btn-lg btn-danger">留言板</a>
+</p>
+</div>
+</div>
+
+<div id="education"></div>
+<center><div class="divider"></div></center>
+
+<div class="row featurette education">
+    <div class="col-md-7">
+      <h1 class="featurette-heading text-left display-4 cont">國立高雄第一科技大學 <br> 
+            應用日語系 <span class="text-muted date">2010 - 2014</span></h1>
+      <p class="lead text-left cont down content">
+        MOS Master認證､ 電子商務與管理學程<br>
+        Google Analytics Certificates､ 日本經濟<br>
+        政府專案預算控管｡
+    </p>
+    </div>
+    <div class="col-md-5">
+      <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="300" height="300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+        <image xlink:href="{{ url_for('static', filename='nkfust.png') }} "width="100%" height="100%"/>
+      </svg>
+    </div>
+  </div>
+
+  
+
+  <div class="row featurette">
+    <div class="col-md-7 order-md-2">
+      <h1 class="featurette-heading text-left display-4 cont">緯育資料分析師培訓進修班 <span class="text-muted date">Apr 2021 - Oct 2021</span></h1>
+      <p class="lead text-left cont content">
+        python 的基本操作｡ 爬蟲､ 資料清洗､ 資料整理､ 資料視覺化｡ 機器學習與深度學習｡ MySQL､ Linux､ flask､ hadoop､ spark､ kafka､ powerBI､ Git､ Docker｡
+      </p>
+    </div>
+    <div class="col-md-5 order-md-1">
+      <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="300" height="300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+         <image xlink:href="{{ url_for('static', filename='wu.png') }} "width="100%" height="100%"/>
+      </svg>
+    </div>
+  </div> 
+
+
+  <div id="experience"></div>
+  <center><div class="divider "></div></center>
+
+
+  <div class="row featurette education">
+    <div class="col-md-7">
+      <h1 class="featurette-heading text-left display-4 cont">網路行銷 <span class="text-muted date">2019 - 2021</span></h1>
+      <p class="lead text-left cont down content">
+        網頁管理､ 各電商平台行銷､ 出貨進度排程<br>
+        開發參與､ 樣品檢討報告､ 成品上市日程及行銷企劃<br>
+        市場分析､ 業界合作事宜､ 門市活動､ 銷售追蹤｡<br>
+        
+        
+        
+    </p>
+    </div>
+    <div class="col-md-5">
+      <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="300" height="300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+        <image xlink:href="{{ url_for('static', filename='shopping.png') }} "width="100%" height="100%"/>
+      </svg>
+    </div>
+  </div>
+
+
+  <div class="row featurette education">
+    <div class="col-md-7 order-md-2">
+      <h1 class="featurette-heading text-left display-4 cont"> 產品銷售､人事經理 <br>
+        <span class="text-muted date">(加拿大)2014-2016/2018-2019</span></h1>
+      <p class="lead text-left cont content down">
+       人力資源維護､ 教育訓練､ 固定資產增購､ 盤點等管理作業｡ 員工出勤表安排｡ 年度計劃與預算的擬定｡<br>
+       商品進銷庫存掌控｡
+    
+      </p>
+    </div>
+    <div class="col-md-5 order-md-1">
+      <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="300" height="300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+         <image xlink:href="{{ url_for('static', filename='hr.png') }} "width="100%" height="100%"/>
+      </svg>
+    </div>
+  </div>
+
+
+  <div class="row featurette education">
+    <div class="col-md-7">
+      <h1 class="featurette-heading text-left display-4 cont">業務助理 <span class="text-muted date">  2016 - 2018 </span></h1>
+      <p class="lead text-left  cont down content">
+        開發潛在客戶, 拓展市場､ 產品報價及產品展示､<br> 
+        帳務進銷存､ 編製報表､ 針對市場進行策略性規劃､<br>
+        評估所有潛在利益與風險｡
+    </p>
+    </div>
+    <div class="col-md-5">
+      <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="300" height="300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+        <image xlink:href="{{ url_for('static', filename='bosch.png') }} "width="100%" height="100%"/>
+      </svg>
+    </div>
+  </div>
+
+
+  <div class="row featurette education">
+    <div class="col-md-7 order-md-2">
+      <h1 class="featurette-heading text-left display-4 cont">秘書助理 <span class="text-muted date">2010 - 2014</span></h1>
+      <p class="lead text-left  cont down content">
+        活動策劃､ 預算編列､ 報表彙整與管理､ 主管行程規畫及安排､<br> 
+        行政事務流程之規劃､ 整合及溝通､ 文書檔案建立與管理｡
+      </p>
+    </div>
+    <div class="col-md-5 order-md-1">
+      <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="300" height="300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+         <image xlink:href="{{ url_for('static', filename='as.png') }} "width="100%" height="100%"/>
+      </svg>
+    </div>
+  </div>
+
+  <center ><div class="divider1"></div></center>
+  {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
