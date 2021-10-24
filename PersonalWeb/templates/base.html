@@ -31,9 +31,11 @@
           <div class="inner">
             <h3 class="masthead-brand display-4 Crystal">Crystal</h3>
             <nav class="nav nav-masthead justify-content-center">
-              <a class="nav-link active" href="{{ url_for('index') }}">首頁</a>
-              <a class="nav-link" href="/#education">學歷</a>
-              <a class="nav-link" href="/#experience">經歷</a>
+              <a {%  if request.endpoint == 'index' %}class="nav-link active"{% else %}class="nav-link" {% endif %} href="{{ url_for('index') }}">首頁</a>
+              <a class="nav-link " href="/#education">學歷</a>
+              <a class="nav-link " href="/#experience">經歷</a>
+              <a {% if request.endpoint == 'story'%}class="nav-link active" {% else %} class="nav-link" {% endif %} href="{{url_for('story')}}">動態</a>
+              <a class="btn btn-lg btn-danger login" href="{{url_for('login')}}">登入</a>
             </nav>
           </div>
         </header>

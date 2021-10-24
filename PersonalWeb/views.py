@@ -27,3 +27,14 @@ def message():
 
     messages=Message.query.order_by(Message.timestamp.desc()).all()
     return render_template('message.html' , form = form ,messages=messages)
+
+
+
+@app.route('/story')
+def story():
+    return render_template('story.html')
+
+
+@app.route('/login')
+def login():
+    return render_template('login.html')

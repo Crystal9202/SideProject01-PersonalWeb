@@ -19,4 +19,4 @@ moment=Moment(app)
 
 
 
-from PersonalWeb import views ,models,forms,errors
+from PersonalWeb import views ,models,forms,errors,commands

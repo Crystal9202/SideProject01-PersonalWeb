@@ -1,0 +1,75 @@
+step1 git init
+step2 python -m venv venv
+step3 source ./venv/Scripts/Activate
+step4 新增與編輯  .flaskenv
+step5 pip install python-dotenv
+step6 編輯 .gitignore
+step7 新增 PersonalWeb 包 ( package )
+step8 新增 __init__.py 構造文件
+step9 pip install flask
+step10 編輯 __init__.py 構造文件
+step11 新增 views.py 檔
+step12 編輯 views.py 檔
+step13 編輯 __init__.py 構造文件，要把 views 檔 import 進來，且 flask run 一下
+step14 新增 templates 資料夾
+step15 新增 static 資料夾
+step16 在 templates 資料夾新增 index.html
+step17 編輯 views.py 檔
+step18 flask run
+step19 新增 settings.py 檔
+step20 編輯 settings.py 檔
+step21 編輯 __init__ 構造文件，要把 settings 加進來
+step22 pip install flask-sqlalchemy
+step23 編輯 __init__ 構造文件，flask-sqlalchemy 擴展
+step24 flask shell -> from PersonalWeb import db -> 看一下 db 的 URI 有沒有設定錯誤
+step25 新增 models.py 檔
+step26 更新 __init__ 構造文件，把 models 檔 import 進來
+step27 flask shell -> from PersonalWeb import db -> db.drop_all() -> db.create_all() 建立資料庫跟資料表
+step28 用 SQlite Browser 看一下
+step29 新增幾筆紀錄，記得最後要 db.session.add(加誰就放誰) -> db.session.commit()
+step30 新增 base.html
+step31 編輯 base.html
+step32 把所有需要用到的檔案放入 CSS 與 js 資料夾
+step33 刪除 scripts.js 與 style.css 的內容，這是我們之後要自己寫 CSS 與 javascript 的地方
+step34 pip install bootstrap-flask
+step35 編輯 __init__.py 檔，Bootstrap-flask 擴展
+step36 編輯 views.py 檔，新增 message 的路由
+step36 新增 message.html
+step37 在 index.html 與 message.html 使用 base.html，也就是繼承的概念
+step38 flask run
+step39 修改 index.html 與 message.html 的 title
+step40 下載 bootstrap 範例
+step41 使用 bootstrap4 的 cover 範例來編輯 base.html，且修改 style.css 檔
+step42 編輯 index.html
+step43 編輯 base.html
+step44 編輯 index.html
+step45 新增forms.py
+step46 pip install flask-wtf
+step47 編輯 forms.py
+step48 編輯 __init__py 構造文件
+step49 編輯 views.py 檔
+step50 編輯 message.html 檔 與 style.css 檔
+step51 編輯 view.py 檔
+step52 編輯 message.html 檔
+step53 使用 SQlite Browser
+step54 編輯 style.css 檔
+step55 在 flask shell 中匯入類 Message ,練習操作查詢過濾
+step56 編輯 views.py 檔
+step57 編輯 message.html 檔與 style.css 檔
+step58 pip install flask-moment
+step59 編輯 __init__ 構造文件
+step60 編輯 base.html
+step61 編輯 message.html 檔與 style.css 檔
+step62 新增檔案 errors.py
+step63 編輯 errors.py
+step64 編輯 __init__.py 構造文件
+step65 新增檔案 404.html 與 500.html
+step66 編輯 404.html 與 500.html
+step67 編輯 style.css
+step68 新增與編輯 command.py 檔
+step69 編輯 __init__.py 構造文件
+step70 編輯 base.html
+step71 編輯 views.py
+step72 新增與編輯 story.html 與 login.html
+step73 編輯 base.html 與 style.css
+step74
