@@ -72,4 +72,8 @@ step70 編輯 base.html
 step71 編輯 views.py
 step72 新增與編輯 story.html 與 login.html
 step73 編輯 base.html 與 style.css
-step74
+step74 編輯 story.html
+step75 編輯 models.py
+step76 編輯 commands.py
+step77 編輯 views.py 檔
+step78 編輯 story.html

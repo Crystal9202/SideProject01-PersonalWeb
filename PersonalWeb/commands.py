@@ -1,6 +1,6 @@
 import click
 from PersonalWeb import app ,db 
-from PersonalWeb.models import Message
+from PersonalWeb.models import Message ,Story
 
 
 
@@ -31,5 +31,20 @@ def forge():
     for m in messages:
         message = Message(name = m['name'] , body = m['body'])
         db.session.add(message)
+
+
+    stories = [
+
+        {'title': '個人網站', 'body': '個人獨立小型專案, 支持留言板與登入系統, 進行中｡', 'site': 'https://github.com/Crystal9202/SideProject01-PersonalWeb'},
+        {'title': '資料分析', 'body': '個人獨立小型專案, 支持前台後台登入系統, 準備中｡', 'site': 'https://github.com/Crystal9202/SideProject02-DataAnalysis'},
+        {'title': 'LeetCode刷題記錄', 'body': '使用 Python 與 MySQL 的刷題記錄, 持續中｡', 'site': 'https://github.com/Crystal9202/LeetCode'},
+        {'title': 'Datamining', 'body': '使用 pandas 與 NumPy 等套件進行資料分析, 持續中｡', 'site':'https://github.com/Crystal9202/pandas'}
+    ]
+
+    for s in stories:
+        stories = Story(title=s['title'],body=s['body'],site=s.get('site','/story'))
+        db.session.add(stories)
+
+
     db.session.commit()
     click.echo('Done')

@@ -3,7 +3,7 @@ from werkzeug.utils import redirect
 from  PersonalWeb import app ,db
 from flask import render_template ,flash,redirect
 from PersonalWeb.forms import HelloForm
-from PersonalWeb.models import Message
+from PersonalWeb.models import Message ,Story
 from werkzeug.utils import redirect
 
 
@@ -32,7 +32,8 @@ def message():
 
 @app.route('/story')
 def story():
-    return render_template('story.html')
+    stories=Story.query.all()
+    return render_template('story.html' ,stories=stories)
 
 
 @app.route('/login')
