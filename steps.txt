@@ -77,3 +77,9 @@ step75 編輯 models.py
 step76 編輯 commands.py
 step77 編輯 views.py 檔
 step78 編輯 story.html
+step79 編輯 forms.py
+step80 編輯 views.py
+step81 編輯 story.html and style.css
+step82 編輯 views.py
+step83 編輯 story.html
+step84

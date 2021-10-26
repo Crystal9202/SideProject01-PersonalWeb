@@ -2,9 +2,10 @@ from flask.helpers import url_for
 from werkzeug.utils import redirect
 from  PersonalWeb import app ,db
 from flask import render_template ,flash,redirect
-from PersonalWeb.forms import HelloForm
+from PersonalWeb.forms import HelloForm ,PostForm
 from PersonalWeb.models import Message ,Story
 from werkzeug.utils import redirect
+from flask_wtf import form
 
 
 @app.route('/')
@@ -30,10 +31,12 @@ def message():
 
 
 
-@app.route('/story')
+@app.route('/story',methods=["GET","POST"])
 def story():
     stories=Story.query.all()
-    return render_template('story.html' ,stories=stories)
+    form=PostForm()
+    if form.validate_on_submit():
+    return render_template('story.html' ,stories=stories , form=form)
 
 
 @app.route('/login')

@@ -1,4 +1,5 @@
 {% extends 'base.html'%}
+{%   from 'bootstrap/form.html'  import render_form %}
 {% block title %} 專題進展與最新動態  {% endblock %}
 
 {% block main %}
@@ -7,6 +8,13 @@
         <div class="content-section-heading text-center">
             <h3 class="text-secondary mb-0 cont">持續更新中</h3>
             <h2 class="mb-5 cont">專案進展與最新動態</h2>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 text-left mb-5 center1">
+                    {{render_form(form, button_map = {'submit':'danger'},extra_classes = 'post') }}
+                </div>
+                <div class="col-md-2"></div>
+            </div>
         </div>
         <div class="row gx-0">
             {% for story in stories %}
@@ -26,5 +34,7 @@
         </div>
     </div>
 </section>
+
+<center ><div class="divider1"></div></center>
 
 {% endblock %}
