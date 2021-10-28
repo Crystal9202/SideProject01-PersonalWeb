@@ -29,6 +29,13 @@ def message():
     messages=Message.query.order_by(Message.timestamp.desc()).all()
     return render_template('message.html' , form = form ,messages=messages)
 
+@app.route('/message/delete/<int:message_id>',methods=['POST'] )
+def delete_message(message_id):
+    message = Message.query.get_or_404(message_id)
+    db.session.delete(message)
+    db.session.commit()
+    flash('留言已經刪除')
+    return redirect(url_for('message'))
 
 
 @app.route('/story',methods=["GET","POST"])
@@ -36,7 +43,24 @@ def story():
     stories=Story.query.all()
     form=PostForm()
     if form.validate_on_submit():
+        title=form.title.data
+        body=form.body.data
+        site=form.site.data
+        story=Story(title=title , body=body ,site=site)
+        db.session.add(story)
+        db.session.commit()
+        flash('新增最新動態')
+        return redirect(url_for('story'))
     return render_template('story.html' ,stories=stories , form=form)
+
+
+@app.route('/story/delete/<int:story_id>' , methods=['POST'])
+def delete_story(story_id):
+    story = Story.query.get_or_404(story_id)
+    db.session.delete(story)
+    db.session.commit()
+    flash('動態已刪除')
+    return redirect(url_for('story'))
 
 
 @app.route('/login')

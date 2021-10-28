@@ -82,4 +82,8 @@ step80 編輯 views.py
 step81 編輯 story.html and style.css
 step82 編輯 views.py
 step83 編輯 story.html
-step84
+step84 編輯 views.py
+step85 編輯 story.py
+step86 編輯 views.py
+step87 編輯 message.html and 擴展 CSRFProtect(app)
+step88 編輯 views.py

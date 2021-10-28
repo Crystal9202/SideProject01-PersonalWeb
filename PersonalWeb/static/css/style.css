@@ -319,7 +319,9 @@ input[type=submit]{
 }
 
 
-
+.inline{
+  display: inline ;
+}
 
 
 
