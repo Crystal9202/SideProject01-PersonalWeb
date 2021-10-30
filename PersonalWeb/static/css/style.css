@@ -323,16 +323,42 @@ input[type=submit]{
   display: inline ;
 }
 
+.bodycls{
+  background-color :#4682B4;
+}
 
+input[type=password] {
+  height: 60px;
+}
 
+input[type=checkbox] {
+  width: 20px;
+  height: 20px;
+}
 
+.form-check{ 
+  float: left;
+  margin-top: 15px;
+}
 
+.form-check-label{
+  margin-left: 10px;
+}
 
-
-
-
-
-
+.lgin{
+  padding-top: 30px;
+  padding-bottom: 50px;
+  padding-right: 90px;
+  padding-left: 90px;
+  background-color:rgba(0, 0, 0, 0.2);
+  height: 550px;
+  position: absolute;
+  top: 100px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin: auto;
+}
 
 
 

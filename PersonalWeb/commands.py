@@ -1,6 +1,8 @@
 import click
+from flask import cli
+
 from PersonalWeb import app ,db 
-from PersonalWeb.models import Message ,Story
+from PersonalWeb.models import Message ,Story ,User
 
 
 
@@ -45,6 +47,22 @@ def forge():
         stories = Story(title=s['title'],body=s['body'],site=s.get('site','/story'))
         db.session.add(stories)
 
+
+@app.cli.command()
+@click.option('--username' ,prompt = True , help=" The username used to login")
+@click.option('--password' ,prompt = True ,hide_input = True , confirmation_prompt = True , help ='The password used to login' )
+def admin(username , password):
+    """Create user."""
+    db.create_all()
+
+    user = User.query.first()
+    if user is not None:
+        user.username = username
+        user.set_password(password)
+    else:
+        user = User(username = username , name ='Admin')
+        user.set_password(password)
+        db.session.add(user)
 
     db.session.commit()
     click.echo('Done')

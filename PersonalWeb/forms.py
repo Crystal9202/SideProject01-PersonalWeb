@@ -1,10 +1,8 @@
+from typing import Optional
 from flask_wtf import FlaskForm
-from wtforms.fields.core import Label, StringField
-from wtforms.fields.simple import SubmitField, TextAreaField
-from wtforms.validators import DataRequired, Length
-
-
-
+from wtforms.fields.core import Label, StringField ,BooleanField
+from wtforms.fields.simple import PasswordField ,SubmitField, TextAreaField 
+from wtforms.validators import DataRequired, Length , Optional
 
 
 class HelloForm(FlaskForm):
@@ -18,3 +16,8 @@ class PostForm(FlaskForm):
     site = StringField(label = '連結' , validators = [DataRequired(), Length(0, 255)] , render_kw = {'placeholder' : '/story'})
     submit = SubmitField(label = '送出')
 
+class LoginForm(FlaskForm):
+    username = StringField(label='' ,validators=[DataRequired() ,Length(1, 20)], render_kw = {'placeholder' : '使用者帳號'})
+    password = PasswordField(label='', validators=[DataRequired() ,Length(1, 128)] , render_kw = {'placeholder': '使用者密碼'})
+    submit = SubmitField(label = '登入')
+    remember = BooleanField (label = '記住我')

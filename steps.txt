@@ -87,3 +87,20 @@ step85 編輯 story.py
 step86 編輯 views.py
 step87 編輯 message.html and 擴展 CSRFProtect(app)
 step88 編輯 views.py
+step89 編輯 views.py 增加視圖函數 edit_story()
+step90 新增與編輯 edit_story.html
+step91 編輯 story.html 
+step92 編輯 views.py
+step93 編輯 models.py
+step94 編輯 commands.py
+step95 flask initdb --drop -> flask forge -> flask admin -> flask run
+step96 pip install flask-login
+step97 擴展 flask-login 且實現一個 "用戶加載回調函數"
+step98 讓 User 模型類繼承  Flask-Login 提供的 UserMixin 類
+step99 編輯 forms.py
+step100 編輯 login.html
+step101 編輯 views.py
+step102 編輯 login.html 與 style.css 檔
+
+
+
