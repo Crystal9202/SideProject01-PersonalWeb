@@ -45,6 +45,8 @@ def forge():
     for s in stories:
         stories = Story(title=s['title'],body=s['body'],site=s.get('site','/story'))
         db.session.add(stories)
+    
+    db.session.commit()
     click.echo('Done')
 
 
