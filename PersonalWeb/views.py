@@ -1,11 +1,8 @@
-from flask.helpers import url_for
-from werkzeug.utils import redirect
-from  PersonalWeb import app ,db
-from flask import render_template ,flash,redirect
+from PersonalWeb import app ,db
+from flask import render_template ,flash,redirect ,url_for
 from PersonalWeb.forms import HelloForm ,PostForm ,LoginForm
-from PersonalWeb.models import Message ,Story 
-from werkzeug.utils import redirect
-from flask_wtf import form
+from PersonalWeb.models import Message ,Story ,User
+from flask_login import login_user ,logout_user , current_user ,login_required
 
 
 @app.route('/')
@@ -27,9 +24,10 @@ def message():
     
 
     messages=Message.query.order_by(Message.timestamp.desc()).all()
-    return render_template('message.html' , form = form ,messages=messages)
+    return render_template('message.html' , form = form ,messages = messages)
 
 @app.route('/message/delete/<int:message_id>',methods=['POST'] )
+@login_required
 def delete_message(message_id):
     message = Message.query.get_or_404(message_id)
     db.session.delete(message)
@@ -43,18 +41,21 @@ def story():
     stories=Story.query.all()
     form=PostForm()
     if form.validate_on_submit():
+        if not current_user.is_authenticated:
+            return redirect(url_for('index'))
         title=form.title.data
         body=form.body.data
         site=form.site.data
-        story=Story(title=title , body=body ,site=site)
+        story=Story(title=title , body=body , site=site)
         db.session.add(story)
         db.session.commit()
         flash('新增最新動態')
         return redirect(url_for('story'))
-    return render_template('story.html' ,stories=stories , form=form)
+    return render_template('story.html' ,stories = stories , form = form)
 
 
 @app.route('/story/edit/<int:story_id>' ,methods =['GET','POST'])
+@login_required
 def edit_story(story_id):
     form = PostForm()
     story=Story.query.get_or_404(story_id)
@@ -71,10 +72,8 @@ def edit_story(story_id):
     return render_template('edit_story.html',form=form)
 
 
-
-
-
 @app.route('/story/delete/<int:story_id>' , methods=['POST'])
+@login_required
 def delete_story(story_id):
     story = Story.query.get_or_404(story_id)
     db.session.delete(story)
@@ -83,8 +82,34 @@ def delete_story(story_id):
     return redirect(url_for('story'))
 
 
-@app.route('/login')
+@app.route('/login' ,methods=['GET','POST'])
 def login():
+    if current_user.is_authenticated: 
+        return redirect(url_for('index'))
+
     form = LoginForm()
-    return render_template('login.html' ,form = form)
+    if form.validate_on_submit():
+        username = form.username.data
+        password = form.password.data
+        remember = form.remember.data
+        user = User.query.first()
+
+        if user:
+            # 驗證用戶名和密碼
+            if username == user.username and user.validate_password(password):
+                login_user(user, remember) # 登入用戶
+                flash('歡迎回來')
+                return redirect(url_for('index'))
+            flash('錯誤的使用者或密碼')
+        else:
+            flash('沒有此使用者')
+    return render_template('login.html', form = form)  
+
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    flash('登出成功')
+    return redirect(url_for('index'))
 

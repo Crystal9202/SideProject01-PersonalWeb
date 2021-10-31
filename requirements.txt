@@ -2,6 +2,7 @@ Bootstrap-Flask==1.8.0
 click==8.0.1
 colorama==0.4.4
 Flask==2.0.1
+Flask-Login==0.5.0
 Flask-Moment==1.0.2
 Flask-SQLAlchemy==2.5.1
 Flask-WTF==0.15.1
@@ -12,4 +13,5 @@ MarkupSafe==2.0.1
 python-dotenv==0.19.0
 SQLAlchemy==1.4.23
 Werkzeug==2.0.1
+wtf==0.1
 WTForms==2.3.3

@@ -1,5 +1,6 @@
 {% extends 'base.html'%}
-{%   from 'bootstrap/form.html'  import render_form %}
+{% from 'bootstrap/form.html'  import render_form %}
+
 {% block title %} 編輯最新動態  {% endblock %}
 
 {% block main %}
@@ -10,8 +11,6 @@
     {{ message }}
 </div>
 {% endfor %}
-
-
 
 <section class="content-section" id="portfolio">
     <div class="container px-4 px-lg-5">

@@ -1,5 +1,12 @@
 {% extends "base.html"%}
 {% block main %}
+{% for message in get_flashed_messages() %}
+<div class="alert alert-info flash">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    {{ message }}
+</div>
+{% endfor %}
+
 <div class="outer">
 <div class="about">
 <h1 class="cover-heading display-3 cont">
@@ -7,11 +14,10 @@
   唯有樂觀進取, 一步一腳印｡
 </h1>
 <p class="lead cont content down">
-    我是Crystal,　有海外工作經驗｡ 積極､ 自主學習,　勇於嘗試跨領域挑戰｡以資料分析師跟後端工程師為目標,
+    我是Crystal, 有海外工作經驗｡ 積極､ 自主學習, 勇於嘗試跨領域挑戰｡<br>以資料分析師跟後端工程師為目標,
     您的寶貴經驗與意見會是我最大的動力,<br>
     歡迎留言給我｡
 </p>
-
 <div class="down"></div>
 
 <p class="lead">
@@ -41,10 +47,9 @@
   </div>
 
   
-
   <div class="row featurette">
     <div class="col-md-7 order-md-2">
-      <h1 class="featurette-heading text-left display-4 cont">緯育資料分析師培訓進修班 <span class="text-muted date">Apr 2021 - Oct 2021</span></h1>
+      <h1 class="featurette-heading text-left display-4 cont">緯育資料分析師培訓進修班<span class="text-muted date">Apr 2021 - Oct 2021</span></h1>
       <p class="lead text-left cont content">
         python 的基本操作｡ 爬蟲､ 資料清洗､ 資料整理､ 資料視覺化｡ 機器學習與深度學習｡ MySQL､ Linux､ flask､ hadoop､ spark､ kafka､ powerBI､ Git､ Docker｡
       </p>
@@ -63,14 +68,11 @@
 
   <div class="row featurette education">
     <div class="col-md-7">
-      <h1 class="featurette-heading text-left display-4 cont">網路行銷 <span class="text-muted date">2019 - 2021</span></h1>
+      <h1 class="featurette-heading text-left display-4 cont">網路行銷<span class="text-muted date">2019 - 2021</span></h1>
       <p class="lead text-left cont down content">
         網頁管理､ 各電商平台行銷､ 出貨進度排程<br>
         開發參與､ 樣品檢討報告､ 成品上市日程及行銷企劃<br>
-        市場分析､ 業界合作事宜､ 門市活動､ 銷售追蹤｡<br>
-        
-        
-        
+        市場分析､ 業界合作事宜､ 門市活動､ 銷售追蹤｡<br>   
     </p>
     </div>
     <div class="col-md-5">
@@ -83,12 +85,10 @@
 
   <div class="row featurette education">
     <div class="col-md-7 order-md-2">
-      <h1 class="featurette-heading text-left display-4 cont"> 產品銷售､人事經理 <br>
-        <span class="text-muted date">(加拿大)2014-2016/2018-2019</span></h1>
+      <h1 class="featurette-heading text-left display-4 cont">人事經理 <span class="text-muted date">(加拿大)2014-2016/2018-2019</span></h1>
       <p class="lead text-left cont content down">
        人力資源維護､ 教育訓練､ 固定資產增購､ 盤點等管理作業｡ 員工出勤表安排｡ 年度計劃與預算的擬定｡<br>
-       商品進銷庫存掌控｡
-    
+       商品進銷庫存掌控｡    
       </p>
     </div>
     <div class="col-md-5 order-md-1">
@@ -101,7 +101,7 @@
 
   <div class="row featurette education">
     <div class="col-md-7">
-      <h1 class="featurette-heading text-left display-4 cont">業務助理 <span class="text-muted date">  2016 - 2018 </span></h1>
+      <h1 class="featurette-heading text-left display-4 cont">業務助理<span class="text-muted date">  2016 - 2018 </span></h1>
       <p class="lead text-left  cont down content">
         開發潛在客戶､ 拓展市場､ 產品報價及產品展示､<br> 
         帳務進銷存､ 編製報表､ 針對市場進行策略性規劃､<br>

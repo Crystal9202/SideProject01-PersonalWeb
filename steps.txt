@@ -101,6 +101,13 @@ step99 編輯 forms.py
 step100 編輯 login.html
 step101 編輯 views.py
 step102 編輯 login.html 與 style.css 檔
+step103 編輯 views.py
+step104 編輯 base.html
+step105 編輯 index.html 要加入 get_flashed_messages()
+step106 編輯 message.html
+step107 編輯 story.html
+step108 編輯 __init__.py 構造文件
+step109 編輯 views.py
 
 
 
