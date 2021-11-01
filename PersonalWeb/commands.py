@@ -39,7 +39,7 @@ def forge():
         {'title': '個人網站', 'body': '個人獨立小型專案, 支持留言板與登入系統, 進行中｡', 'site': 'https://github.com/Crystal9202/SideProject01-PersonalWeb'},
         {'title': '資料分析', 'body': '個人獨立小型專案, 支持前台後台登入系統, 準備中｡', 'site': 'https://github.com/Crystal9202/SideProject02-DataAnalysis'},
         {'title': 'LeetCode刷題記錄', 'body': '使用 Python 與 MySQL 的刷題記錄, 持續中｡', 'site': 'https://github.com/Crystal9202/LeetCode'},
-        {'title': 'Datamining', 'body': '使用 pandas 與 NumPy 等套件進行資料分析, 持續中｡', 'site':'https://github.com/Crystal9202/pandas'}
+        {'title': 'Data Mining', 'body': '使用 pandas 與 NumPy 等套件進行資料分析, 持續中｡', 'site':'https://github.com/Crystal9202/pandas'}
     ]
 
     for s in stories:
